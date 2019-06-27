@@ -18,4 +18,9 @@ public class IUserServiceImpl implements IUserService {
         log.info("username: " + user.getUsername());
         log.info("note: " + user.getNote());
     }
+
+    @Override
+    public void multipleAspects() {
+        log.info("test multiple aspects");
+    }
 }

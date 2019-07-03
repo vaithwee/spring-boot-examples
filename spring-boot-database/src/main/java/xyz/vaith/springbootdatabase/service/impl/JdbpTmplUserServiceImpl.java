@@ -3,6 +3,7 @@ package xyz.vaith.springbootdatabase.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Service;
 import xyz.vaith.springbootdatabase.enumeration.Sex;
 import xyz.vaith.springbootdatabase.pojo.User;
 import xyz.vaith.springbootdatabase.service.JdbpTmplUserService;
@@ -10,6 +11,7 @@ import java.sql.ResultSet;
 
 import java.util.List;
 
+@Service
 public class JdbpTmplUserServiceImpl implements JdbpTmplUserService {
 
     @Autowired

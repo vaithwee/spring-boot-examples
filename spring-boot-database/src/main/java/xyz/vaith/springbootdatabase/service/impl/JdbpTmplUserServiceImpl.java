@@ -41,7 +41,7 @@ public class JdbpTmplUserServiceImpl implements JdbpTmplUserService {
 
     @Override
     public List<User> findUsers(String userName, String note) {
-        String sql = "select * from t_user where username like concat('%', ?, '%') and note like concat('%', ?, '%')";
+        String sql = "select * from t_user where user_name like concat('%', ?, '%') and note like concat('%', ?, '%')";
         Object[] params = new Object[] {userName, note};
         List<User> users = jdbcTemplate.query(sql, params, getUserMapper());
         return users;

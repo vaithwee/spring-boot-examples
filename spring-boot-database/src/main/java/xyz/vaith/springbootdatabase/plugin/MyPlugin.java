@@ -1,6 +1,7 @@
 package xyz.vaith.springbootdatabase.plugin;
 
 import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.executor.statement.StatementHandler;
 import org.apache.ibatis.plugin.*;
 
@@ -11,7 +12,8 @@ import java.util.Properties;
         @Signature(type = StatementHandler.class, method = "prepare", args = {Connection.class, Integer.class})
 })
 
-@Log4j2
+//@Log4j2
+@Slf4j
 public class MyPlugin implements Interceptor {
 
     Properties properties = null;

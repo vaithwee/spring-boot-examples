@@ -24,7 +24,7 @@ public class RedisConfig {
         poolConfig.setMaxWaitMillis(2000);
         JedisConnectionFactory connectionFactory = new JedisConnectionFactory(poolConfig);
         RedisStandaloneConfiguration rsCfg = connectionFactory.getStandaloneConfiguration();
-        rsCfg.setHostName("10.1.4.119");
+        rsCfg.setHostName("192.168.3.27");
         rsCfg.setPort(6379);
 //        rsCfg.setPassword(RedisPassword.of("abcd1234"));
         this.redisConnectionFactory = connectionFactory;
@@ -35,12 +35,11 @@ public class RedisConfig {
     @Bean(name = "redisTemplate")
     public RedisTemplate<Object, Object> initRedisTemplate() {
         RedisTemplate<Object, Object> redisTemplate = new RedisTemplate<>();
-        redisTemplate.setConnectionFactory(initRedisConnectionFactory());
         RedisSerializer<String> stringRedisSerializer = redisTemplate.getStringSerializer();
         redisTemplate.setKeySerializer(stringRedisSerializer);
         redisTemplate.setHashValueSerializer(stringRedisSerializer);
         redisTemplate.setHashKeySerializer(stringRedisSerializer);
-
+        redisTemplate.setConnectionFactory(initRedisConnectionFactory());
         return redisTemplate;
     }
 }

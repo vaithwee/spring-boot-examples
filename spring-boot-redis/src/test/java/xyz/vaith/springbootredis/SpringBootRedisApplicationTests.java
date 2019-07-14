@@ -17,7 +17,7 @@ public class SpringBootRedisApplicationTests {
     public void contextLoads() {
         ApplicationContext context = new AnnotationConfigApplicationContext(RedisConfig.class);
         RedisTemplate redisTemplate = context.getBean(RedisTemplate.class);
-        redisTemplate.opsForValue().set("key1", "value1");
+        redisTemplate.opsForValue().set("key1", "hello world");
         redisTemplate.opsForHash().put("hash", "field", "hvalue");
     }
 

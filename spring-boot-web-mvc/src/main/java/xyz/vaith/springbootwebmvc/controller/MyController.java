@@ -86,4 +86,10 @@ public class MyController {
         }
         return map;
     }
+
+    @RequestMapping("/error")
+    @ResponseBody
+    public String error() {
+        return 1/0 + "";
+    }
 }

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{css/bootstrap.css}" />
+    <link rel="stylesheet" th:href="@{css/bootstrap-theme.css}" />
+    <script type="text/javascript" th:src="@{js/jquery-3.4.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{js/bootstrap.js}"></script>
+        <script type="text/javascript">
+            $(function () {
+                console.log("enter page");
+                $("#loginbtn").click(function () {
+                    var username = $("#loginName");
+                    var password = $("#password");
+                    var msg = "";
+                    if (username.val() == "") {
+                        msg = "username is null";
+                        username.focus();
+                    } else if (password.val() == "") {
+                        msg = "password is null";
+                        password.focus();
+                    }
+                    if (msg != "" ) {
+                        alert(msg);
+                    } else {
+                        console.log("submit");
+                        $("#loginform").submit();
+                    }
+                }) ;
+            });
+        </script>
+</head>
+<body>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">First Spring Boot Web Example</h3>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="page-header">
+                <h2>User Login</h2>
+            </div>
+            <form class="form-horizontal" action="login" method="post" id="loginform">
+                <div class="form-group">
+                    <div class="input-group col-md-4">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input class="form-control" placeholder="username/e-mail" type="text" name="loginName" id="loginName" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group col-md-4">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input class="form-control" placeholder="password" type="password" name="password" id="password" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group col-md-4">
+                        <div class="btn-group btn-group-justified">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-success" id="loginbtn">
+                                    <span class="glyphicon glyphicon-log-in"></span>Sign In
+                                </button>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-danger" id="registerbtn"><span class="glyphicon glyphicon-edit">Register</span> </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>

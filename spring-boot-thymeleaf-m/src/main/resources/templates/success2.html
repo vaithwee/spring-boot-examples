@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{css/bootstrap.css}" />
+    <link rel="stylesheet" th:href="@{css/bootstrap-theme.css}" />
+    <script type="text/javascript" th:src="@{js/jQuery-3.4.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{js/bootstap.js}"></script>
+</head>
+<body>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">iftest</h3>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <p style="color: red">th:if中条件成立时才显示结果</p><br />
+            <span th:if="${username != null}">username不为空</span><br />
+            <span th:if="${age != null}">age不为空</span><br /><br />
+
+            <p style="color: red">th:unless中条件不成立时才显示结果</p><br />
+            <span th:unless="${address != null}">address为空</span><br /><br />
+
+            <p style="color: red">支持多路选择switch结构, 默认属性default可以用*表示</p><br />
+            <div th:switch="${role}">
+                <p th:case="'admin'">管理员</p>
+                <p th:case="'guest'">来宾</p>
+                <p th:case="*">其他</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

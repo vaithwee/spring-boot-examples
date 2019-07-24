@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{css/bootstrap.css}" />
+    <link rel="stylesheet" th:href="@{css/bootstrap-theme.css}" />
+    <script type="text/javascript" th:src="@{js/jQuery-3.4.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{js/bootstap.js}"></script>
+</head>
+<body>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">thymeleaf example</h3>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <a th:href="@{regexptest?loginName=jack&amp;password=123456}">测试表达式</a><br /><br />
+                <a th:href="@{iftest}">测试判断条件</a><br /><br />
+                <a th:href="@{eachtest}">测试循环</a><br /><br />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            findBook();
+        });
+
+        function findBook() {
+            $.ajax("/findBook",{
+               dataType: "json",
+               type: "post",
+               contentType: "application/json",
+               data: JSON.stringify({id: 1, name: "spring boot"}),
+               async: true,
+               success: function (data) {
+                   console.log(data);
+                    $("#cover").html(data.image);
+                    $("#title").html(data.name);
+                    $("#author").html(data.author);
+                    $("#price").html(data.price);
+                    $("#remark").html(data.remark);
+               }
+            });
+        }
+
+
+    </script>
+</head>
+<body>
+    <p id="cover"></p>
+    <p id="title"></p>
+    <p id="author"></p>
+    <p id="price"></p>
+    <p id="remark"></p>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            findBooks();
+        });
+        
+        function findBooks() {
+            $.ajax("/findbooks",{
+               dataType: "json",
+               type: "post",
+               contentType: "application/json",
+               data: JSON.stringify({}),
+               async: true,
+               success: function (data) {
+                   console.log(data);
+                   $.each(data, function () {
+                      var tr = $("#") 
+                   });
+               }
+            });
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

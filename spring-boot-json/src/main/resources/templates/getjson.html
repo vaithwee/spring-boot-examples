@@ -10,7 +10,7 @@
         });
         
         function findBooks() {
-            $.ajax("/findbooks",{
+            $.ajax("/findBooks",{
                dataType: "json",
                type: "post",
                contentType: "application/json",
@@ -19,7 +19,11 @@
                success: function (data) {
                    console.log(data);
                    $.each(data, function () {
-                      var tr = $("#") 
+                      var tr = $("<tr align='center'>");
+                        $("<td/>").html(this.image).appendTo(tr);
+                        $("<td/>").html(this.name).appendTo(tr);
+                        $("<td/>").html(this.author).appendTo(tr);
+                        $("#booktable").append(tr);
                    });
                }
             });
@@ -27,6 +31,17 @@
     </script>
 </head>
 <body>
+    <table id="booktable">
+        <thead>
+            <tr>
+                <th>cover</th>
+                <th>title</th>
+                <th>author</th>
+            </tr>
+        </thead>
+        <tbody>
 
+        </tbody>
+    </table>
 </body>
 </html>

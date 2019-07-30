@@ -38,6 +38,7 @@ public class AppSecurityConfiguration extends WebSecurityConfigurerAdapter {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setHideUserNotFoundExceptions(false);
         provider.setUserDetailsService(userService);
+        provider.setPasswordEncoder(passwordEncoder);
         return provider;
     }
 

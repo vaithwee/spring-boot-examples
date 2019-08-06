@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="head :: head">
+    <meta charset="UTF-8">
+    <title>Hello world</title>
+</head>
+<body class="hold-transition skin-black-light fixed sidebar-mini">
+<div class="wrapper">
+    <header th:replace="header :: header"></header>
+    <aside th:replace="aside :: aside"></aside>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Dashboard
+                <small>Info List</small>
+            </h1>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+        </section>
+        <!-- /.content -->
+    </div>
+</div>
+
+<div th:replace="javascript :: javascript">
+
+</div>
+</body>
+</html>

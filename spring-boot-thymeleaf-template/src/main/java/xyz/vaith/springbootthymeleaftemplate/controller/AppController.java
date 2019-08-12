@@ -10,7 +10,7 @@ import xyz.vaith.springbootthymeleaftemplate.annonation.WebContent;
 public class AppController {
     @RequestMapping("/")
     public String index(Model model) {
-        model.addAttribute("title", "Vee&Wee");
+        model.addAttribute("title", "title 1");
         return "index";
     }
 }

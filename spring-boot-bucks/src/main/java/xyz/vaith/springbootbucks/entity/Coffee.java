@@ -19,6 +19,6 @@ import java.io.Serializable;
 public class Coffee extends BaseEntity implements Serializable {
     private String name;
 
-    @Type(type = "org.jadira.usertype.moneyandcurrency.joda.PersistentBigMoneyAmount", parameters = {@Parameter(name = "currencyCode", value = "CNY")})
+    @Type(type = "org.jadira.usertype.moneyandcurrency.joda.PersistentMoneyAmount", parameters = {@Parameter(name = "currencyCode", value = "CNY")})
     private Money price;
 }

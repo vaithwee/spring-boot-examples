@@ -49,14 +49,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.joda/joda-money -->
+
         <dependency>
             <groupId>org.joda</groupId>
             <artifactId>joda-money</artifactId>
             <version>1.0.1</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.jadira.usertype/usertype.core -->
         <dependency>
             <groupId>org.jadira.usertype</groupId>
             <artifactId>usertype.core</artifactId>

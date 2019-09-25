@@ -1,0 +1,1 @@
+keytool -genkey -alias tomcathttps -keyalg RSA -keysize 2048 -keystore spring-boot-base-config.p12 -validity 365

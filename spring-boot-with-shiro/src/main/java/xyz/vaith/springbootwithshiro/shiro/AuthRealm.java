@@ -23,7 +23,7 @@ public class AuthRealm extends AuthorizingRealm {
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        User user = (User) principalCollection.fromRealm(this.getClass().getName());
+        User user = (User) principalCollection.fromRealm(this.getClass().getName()).iterator().next();
         List<String> permissonList = new ArrayList<>();
         List<String> roleNameList = new ArrayList<>();
         Set<Role> roleSet = user.getRoles();

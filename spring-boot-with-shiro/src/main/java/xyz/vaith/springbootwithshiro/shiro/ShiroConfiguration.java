@@ -27,7 +27,12 @@ public class ShiroConfiguration {
         LinkedHashMap<String, String> urls = new LinkedHashMap<>();
         urls.put("/index", "authc");
         urls.put("/login", "anon");
-
+        urls.put("/logout", "anon");
+        urls.put("/loginUser", "anon");
+        urls.put("/admin", "roles[admin]");
+        urls.put("/edit", "perms[edit]");
+        urls.put("/druid/**" , "anon");
+        urls.put("/**", "user");
         bean.setFilterChainDefinitionMap(urls);
         return bean;
     }
